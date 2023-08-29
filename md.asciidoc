@@ -1,0 +1,85 @@
+=== Registers
+
+==== Register access types
+[%hardbreaks]
+RW - read-write
+RO - read-only
+WO - write-only
+RWO - read-writeOnce
+WO1 - writeOnce
+
+==== Register field access types used
+[%hardbreaks]
+RO      - W: no effect, R: no effect
+
+==== Memory Map
+
+Temperature Sensor Module Base Address: 0x0015
+
+.Memory Map
+[cols="^1,^1,^1,^1,^1,<3", grid=all, stripes=even]
+|===
+| Offset | Register | Type | Reset | Width | Description
+
+6+s| Error Counter
+|  [.O]#0x0015#| [.D]#<<_tsm_rst_reset_reg,TSM_RST>># | RO| [.R]#0x0#| 32 1+<| [.D]#Reset Reg#
+|===
+
+==== TSM_RST - Reset Reg
+[%hardbreaks]
+Reset register
+This register can be accessed in the mode RO.
+[.text-center]
+TSM_RST address offset = <<_memory_map,0x0015>>
+
+.Register table of TSM_RST.
+
+[cols="<2,8*^",grid=all, options="unbreakable"]
+|===
+|Bit|31 |30 |29 |28 |27 |26 |25 |24 
+
+
+|*Name*   8+|reserved
+|*Type*   8+|RO
+|*Reset*  8+|0x0
+|===
+
+[cols="<2,8*^",grid=all, options="unbreakable"]
+|===
+|Bit|23 |22 |21 |20 |19 |18 |17 |16 
+
+
+|*Name*   8+|reserved
+|*Type*   8+|RO
+|*Reset*  8+|0x0
+|===
+
+[cols="<2,8*^",grid=all, options="unbreakable"]
+|===
+|Bit|15 |14 |13 |12 |11 |10 |9 |8 
+
+
+|*Name*   8+|reserved
+|*Type*   8+|RO
+|*Reset*  8+|0x0
+|===
+
+[cols="<2,8*^",grid=all, options="unbreakable"]
+|===
+|Bit|7 |6 |5 |4 |3 |2 |1 |0 
+
+
+|*Name*   2+|reserved 2+| <<RST.Read_link,Read[1:0]>>  4+|reserved
+|*Type*   2+|RO 2+|RO 4+|RO
+|*Reset*  2+|0x0 2+|0x0 4+|0x0
+|===
+
+.Bitfield table of TSM_RST.
+[cols="^1,<2,^1,^1,<5",grid=all,stripes=even]
+|===
+|Offset |Bitfield |Type |Reset |Description
+
+|  [.O]#[5:4]# | [[RST.Read_link]] [.D]#Read[1:0]# | RO | [.R]#0x0# | [.D]#Read data bits#
+|===
+
+
